@@ -39,3 +39,4 @@ With that said, you can just copy the example line and don't worry about it. If 
 This action is distributed under the MIT license, check the [license](LICENSE) for more info.
 newline
 newline
+newline
