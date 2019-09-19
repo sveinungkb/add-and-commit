@@ -45,7 +45,7 @@ then
     echo "Creating commit..."
     git commit -m "$INPUT_MESSAGE" --author="$INPUT_AUTHOR_NAME <$INPUT_AUTHOR_EMAIL>"
 
-    if [ ! -z "$var" ]
+    if [ ! -z "$INPUT_TAG_NAME" ]
     then
       git tag -f $INPUT_TAG_NAME
     fi
