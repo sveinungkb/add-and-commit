@@ -1,0 +1,22 @@
+name: Commit and tag
+on: [push]
+
+jobs:
+  run:
+    name: Add/update tag to new release
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+    - name: Make a changes
+      run: echo "newline" >> README.md
+    - name: Commit and tag
+      uses: sveinungkb/add-and-commit@master
+      with:
+        author_name: Github Actions CI
+        message: '[skip ci] Test tagging'
+        path: README.md
+        tag_name: 'test-tag-v2'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

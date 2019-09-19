@@ -3,12 +3,12 @@ on:
   release:
     types: [published]
 
-jobs: 
+jobs:
   run:
     name: Add/update tag to new release
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
     - name: Checkout repository
       uses: actions/checkout@master
 

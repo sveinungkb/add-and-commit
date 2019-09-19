@@ -1,5 +1,5 @@
-name: 'Add & Commit'
-description: 'Add & commit files from a path directly from GitHub Actions'
+name: 'Add & Commit & Tag'
+description: 'Add & commit files from a path directly from GitHub Actions, create an optional tag.'
 
 inputs:
   author_name:
@@ -22,11 +22,14 @@ inputs:
     description: 'The pattern that mathces file names'
     required: false
     default: "*.*"
-    
+  tag_name:
+    description: 'The tag name to use if any'
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
 
-branding: 
+branding:
   icon: 'git-commit'
   color: black
