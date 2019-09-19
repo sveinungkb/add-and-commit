@@ -45,16 +45,16 @@ then
     echo "Creating commit..."
     git commit -m "$INPUT_MESSAGE" --author="$INPUT_AUTHOR_NAME <$INPUT_AUTHOR_EMAIL>"
 
-    if [ ! -z "$INPUT_VERSION_FILE" ]
-    then
-      . $INPUT_VERSION_FILE
-      TAG_NAME = "v$version_major.$version_minor.$version_build"
-      git tag -f "$TAG_NAME"
-      echo "Created tag {$TAG_NAME}..."
-    fi
-
     echo "Pushing to repo..."
-    git push --tags --set-upstream origin "${GITHUB_REF:11}"
+    git push --set-upstream origin "${GITHUB_REF:11}"
 else
     echo "Working tree clean. Nothing to commit."
+fi
+
+if [ ! -z "$INPUT_VERSION_FILE" ]
+then
+  . $INPUT_VERSION_FILE
+  git tag -f "v${version_major.$version_minor.$version_build}"
+  echo "Created tag {v$version_major.$version_minor.$version_build}..."
+  git push --tags
 fi
