@@ -22,7 +22,7 @@ inputs:
     description: 'The pattern that mathces file names'
     required: false
     default: "*.*"
-  tag_name:
+  version_file:
     description: 'The tag name to use if any'
     required: false
 

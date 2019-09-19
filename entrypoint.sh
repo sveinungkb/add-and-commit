@@ -45,10 +45,12 @@ then
     echo "Creating commit..."
     git commit -m "$INPUT_MESSAGE" --author="$INPUT_AUTHOR_NAME <$INPUT_AUTHOR_EMAIL>"
 
-    if [ ! -z "$INPUT_TAG_NAME" ]
+    if [ ! -z "$INPUT_VERSION_FILE" ]
     then
-      git tag -f $INPUT_TAG_NAME
-      echo "Created tag {$INPUT_TAG_NAME}..."
+      . $INPUT_VERSION_FILE
+      TAG_NAME = "v$version_major.$version_minor.$version_build"
+      git tag -f "$TAG_NAME"
+      echo "Created tag {$TAG_NAME}..."
     fi
 
     echo "Pushing to repo..."
