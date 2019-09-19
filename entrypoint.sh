@@ -55,6 +55,6 @@ if [ ! -z "$INPUT_VERSION_FILE" ]
 then
   . $INPUT_VERSION_FILE
   git tag -f "v${version_major.$version_minor.$version_build}"
-  echo "Created tag {v$version_major.$version_minor.$version_build}..."
+  echo "Created tag v{$version_major.$version_minor.$version_build}..."
   git push --tags
 fi
