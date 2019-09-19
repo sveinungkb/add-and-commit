@@ -55,8 +55,8 @@ if [ ! -z "$INPUT_VERSION_FILE" ]
 then
   echo "Reading version from ${INPUT_VERSION_FILE}..."
   source $INPUT_VERSION_FILE
-  echo "version major: ${version_major}"
-  git tag -f "v${version_major.$version_minor.$version_build}"
-  echo "Created tag v{$version_major.$version_minor.$version_build}..."
+  echo "version major: ${version_major}.${version_minor}.${version_build}"
+  git tag -f "v${version_major}.${version_minor}.${version_build}"
+  echo "Created tag v${version_major}.${version_minor}.${version_build}..."
   git push --tags
 fi
