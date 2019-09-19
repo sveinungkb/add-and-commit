@@ -48,10 +48,11 @@ then
     if [ ! -z "$INPUT_TAG_NAME" ]
     then
       git tag -f $INPUT_TAG_NAME
+      echo "Created tag {$INPUT_TAG_NAME}..."
     fi
 
     echo "Pushing to repo..."
-    git push --set-upstream origin "${GITHUB_REF:11}"
+    git push --tags --set-upstream origin "${GITHUB_REF:11}"
 else
     echo "Working tree clean. Nothing to commit."
 fi

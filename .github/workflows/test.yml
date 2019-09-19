@@ -17,6 +17,6 @@ jobs:
         author_name: Github Actions CI
         message: '[skip ci] Test tagging'
         path: README.md
-        tag_name: 'test-tag-v2'
+        tag_name: 'test-tag-v3'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
