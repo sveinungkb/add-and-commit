@@ -40,3 +40,4 @@ This action is distributed under the MIT license, check the [license](LICENSE) f
 newline
 newline
 newline
+newline
