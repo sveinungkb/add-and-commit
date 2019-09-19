@@ -53,7 +53,7 @@ fi
 
 if [ ! -z "$INPUT_VERSION_FILE" ]
 then
-  echo "Reading version from $INPUT_VERSION_FILE..."
+  echo "Reading version from ${INPUT_VERSION_FILE}..."
   source $INPUT_VERSION_FILE
   git tag -f "v${version_major.$version_minor.$version_build}"
   echo "Created tag v{$version_major.$version_minor.$version_build}..."
