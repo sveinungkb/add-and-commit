@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@master
-    - name: Make a changes
+    - name: Make a change
       run: echo "newline" >> README.md
     - name: Commit and tag
       uses: sveinungkb/add-and-commit@master
